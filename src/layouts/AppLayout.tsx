@@ -1,14 +1,13 @@
-import { AppBar, Container, Toolbar, Typography } from '@mui/material';
-import { Outlet } from 'react-router-dom';
+import BackgroundShape from "@/components/BackgroundShape";
+import NavBar from "@/components/NavBar";
+import { Container } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const AppLayout = () => {
   return (
     <>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6">NekoCare</Typography>
-        </Toolbar>
-      </AppBar>
+      <NavBar />
+      <BackgroundShape />
       <Container sx={{ mt: 4 }}>
         <Outlet />
       </Container>

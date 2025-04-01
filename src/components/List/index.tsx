@@ -1,13 +1,14 @@
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
-import DeleteIcon from "@mui/icons-material/Delete";
+import EditCalendarIcon from "@mui/icons-material/EditCalendar";
+import EventBusyIcon from "@mui/icons-material/EventBusy";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import { IconButton } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
 
 type CustomList = {
   avatar: string;
@@ -23,20 +24,46 @@ const CustomList: React.FC<CustomList> = ({
   subDescription,
 }) => {
   return (
-    <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+    <List
+      sx={{
+        width: "100%",
+        bgcolor: "background.paper",
+        borderRadius: 25,
+        border: "1px solid #C0F2D8",
+      }}
+    >
       <ListItem
         alignItems="flex-start"
         secondaryAction={
-          <IconButton edge="end" aria-label="delete">
-            <DeleteIcon />
-          </IconButton>
+          <Grid container direction="row" spacing={1} px={5}>
+            <Grid>
+              <IconButton edge="end" aria-label="update">
+                <EditCalendarIcon />
+              </IconButton>
+            </Grid>
+            <Grid>
+              <IconButton edge="end" aria-label="delete">
+                <EventBusyIcon />
+              </IconButton>
+            </Grid>
+            <Grid>
+              <IconButton edge="end" aria-label="notification">
+                <NotificationsIcon />
+              </IconButton>
+            </Grid>
+          </Grid>
         }
       >
-        <ListItemAvatar>
+        <ListItemAvatar sx={{ px: 5 }}>
           <Avatar alt="Avatar" src={avatar} />
         </ListItemAvatar>
         <ListItemText
           primary={title}
+          slotProps={{
+            primary: {
+              fontWeight: 600,
+            },
+          }}
           secondary={
             <React.Fragment>
               <Typography
@@ -51,7 +78,6 @@ const CustomList: React.FC<CustomList> = ({
           }
         />
       </ListItem>
-      <Divider variant="inset" component="li" />
     </List>
   );
 };
