@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Clínica Geral",
+    "description": "Atendimento inicial para avaliação geral e sintomas diversos.",
+    "icon": "🩺"
+  },
+  {
+    "name": "Dermatologia",
+    "description": "Tratamento de problemas de pele, coceiras e alergias.",
+    "icon": "🐕‍🦺"
+  },
+  {
+    "name": "Ortopedia",
+    "description": "Diagnóstico e tratamento de fraturas e doenças ortopédicas.",
+    "icon": "🦴"
+  },
+  {
+    "name": "Oftalmologia",
+    "description": "Cuidados com os olhos e visão dos pets.",
+    "icon": "👁️"
+  },
+  {
+    "name": "Odontologia Veterinária",
+    "description": "Higiene bucal, tratamento de dentes e gengivas.",
+    "icon": "🦷"
+  },
+  {
+    "name": "Cardiologia",
+    "description": "Doenças do coração, sopros e exames cardíacos.",
+    "icon": "❤️"
+  },
+  {
+    "name": "Geriatria",
+    "description": "Cuidados específicos para pets idosos.",
+    "icon": "🧓🐾"
+  },
+  {
+    "name": "Oncologia",
+    "description": "Diagnóstico e tratamento de câncer e tumores.",
+    "icon": "🎗️"
+  },
+  {
+    "name": "Comportamento Animal",
+    "description": "Tratamento de ansiedade, agressividade e distúrbios comportamentais.",
+    "icon": "🧠"
+  },
+  {
+    "name": "Nutrição Animal",
+    "description": "Planos alimentares, obesidade, dietas especiais.",
+    "icon": "🥕"
+  },
+  {
+    "name": "Endocrinologia",
+    "description": "Distúrbios hormonais, diabetes, tireoide.",
+    "icon": "🔬"
+  },
+  {
+    "name": "Neurologia",
+    "description": "Doenças neurológicas, convulsões, coordenação.",
+    "icon": "🧠🐶"
+  },
+  {
+    "name": "Reprodução e Fertilidade",
+    "description": "Gestação, cio, castração e cuidados reprodutivos.",
+    "icon": "🐾💕"
+  },
+  {
+    "name": "Fisioterapia e Reabilitação",
+    "description": "Tratamento de dor e reabilitação motora.",
+    "icon": "💪🐾"
+  }
+]

@@ -8,11 +8,12 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -46,10 +47,22 @@ const NavBar = () => {
         </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-          <Typography fontWeight={500}>Consultas</Typography>
-          <Typography fontWeight={500}>Exames</Typography>
-          <Typography fontWeight={500}>Contato</Typography>
-          <Typography fontWeight={500}>Curiosidades 🐾</Typography>
+          <Typography
+            fontWeight={500}
+            sx={{ cursor: "pointer" }}
+            onClick={() => navigate("/appointments")}
+          >
+            Consultas
+          </Typography>
+          <Typography fontWeight={500} sx={{ cursor: "pointer" }}>
+            Exames
+          </Typography>
+          <Typography fontWeight={500} sx={{ cursor: "pointer" }}>
+            Contato
+          </Typography>
+          <Typography fontWeight={500} sx={{ cursor: "pointer" }}>
+            Curiosidades 🐾
+          </Typography>
 
           <Tooltip title="Account settings">
             <IconButton
@@ -62,9 +75,9 @@ const NavBar = () => {
             >
               <Avatar
                 sx={{
-                  width: 32,
-                  height: 32,
-                  bgcolor: "primary.main",
+                  width: 50,
+                  height: 50,
+                  bgcolor: (theme) => theme.palette.indico.main,
                 }}
               >
                 M
@@ -112,18 +125,9 @@ const NavBar = () => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
           <Avatar /> My account
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <Settings fontSize="small" />

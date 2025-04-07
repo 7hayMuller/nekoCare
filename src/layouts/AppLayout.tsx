@@ -7,10 +7,11 @@ const AppLayout = () => {
   return (
     <>
       <NavBar />
-      <BackgroundShape />
+      <BackgroundShape top="-200px" right="-100px" />
       <Container sx={{ mt: 4 }}>
         <Outlet />
       </Container>
+      <BackgroundShape bottom="-400px" left="-500px" />
     </>
   );
 };

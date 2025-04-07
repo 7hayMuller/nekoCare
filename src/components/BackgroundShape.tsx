@@ -1,12 +1,26 @@
 import { Box } from "@mui/material";
 
-const BackgroundShape = () => {
+type BackgroundShapeProps = {
+  top?: string;
+  left?: string;
+  right?: string;
+  bottom?: string;
+};
+
+const BackgroundShape: React.FC<BackgroundShapeProps> = ({
+  top,
+  left,
+  right,
+  bottom,
+}) => {
   return (
     <Box
       sx={{
         position: "absolute",
-        top: "-200px",
-        right: "-100px",
+        top: top,
+        right: right,
+        left: left,
+        bottom: bottom,
         width: "1000px",
         height: "800px",
         zIndex: -1,
@@ -15,6 +29,7 @@ const BackgroundShape = () => {
         backgroundSize: "contain",
         backgroundPosition: "top right",
         pointerEvents: "none",
+        opacity: "0.5",
       }}
     />
   );
