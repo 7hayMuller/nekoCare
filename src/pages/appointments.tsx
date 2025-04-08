@@ -11,12 +11,13 @@ import {
 import EditCalendarIcon from "@mui/icons-material/EditCalendar";
 import EventBusyIcon from "@mui/icons-material/EventBusy";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import CustomDialog from "@/components/Dialog";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const { patient } = useParams();
 
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   const [successAlert, setSuccessAlert] = useState<boolean>(false);
@@ -70,7 +71,9 @@ const HomePage = () => {
                         edge="end"
                         aria-label="update"
                         sx={{ color: (theme) => theme.palette.indico.main }}
-                        onClick={() => navigate("/appointments/create")}
+                        onClick={() =>
+                          navigate(`/${patient}/appointments/create`)
+                        }
                       >
                         <EditCalendarIcon />
                       </IconButton>
@@ -111,7 +114,7 @@ const HomePage = () => {
               size="large"
               variant="contained"
               sx={{ width: "300px", backgroundColor: "primary" }}
-              onClick={() => navigate("/appointments/create")}
+              onClick={() => navigate(`/${patient}/appointments/create`)}
             >
               Marcar consulta
             </Button>

@@ -1,24 +1,47 @@
-import AppLayout from "@/layouts/AppLayout";
-import Appointments from "@/pages/create_appointment";
-import HomePage from "@/pages/appointment";
-// import BlogPage from '@/pages/BlogPage';
-// import BookingPage from '@/pages/BookingPage';
-// import NotFoundPage from '@/pages/NotFoundPage';
-// import OnlineConsultPage from '@/pages/OnlineConsultPage';
-// import ResultsPage from '@/pages/ResultsPage';
-import { createBrowserRouter } from "react-router-dom";
+import LoginLayout from "@/layouts/LoginLayout";
+import ProtectedRoute from "@/pages/protectedRoute";
+import { lazy } from "react";
+import { RouteObject } from "react-router-dom";
 
-export const router = createBrowserRouter([
+const AppLayout = lazy(() => import("@/layouts/AppLayout"));
+const Appointments = lazy(() => import("@/pages/appointments_create"));
+const HomePage = lazy(() => import("@/pages/appointments"));
+
+const Login = lazy(() => import("@/pages/login"));
+
+const routes = {
+  admin: [] as RouteObject[],
+  patient: [] as RouteObject[],
+  login: [] as RouteObject[],
+};
+
+routes.login = [
   {
-    path: "/",
-    element: <AppLayout />,
+    // errorElement: <LoginError />,
+    element: <LoginLayout />,
     children: [
-      { path: "appointments", element: <HomePage /> },
-      { path: "appointments/create", element: <Appointments /> },
-      //   { path: 'consulta-online', element: <OnlineConsultPage /> },
-      //   { path: 'blog', element: <BlogPage /> },
-      //   { path: 'exames', element: <ResultsPage /> },
-      //   { path: '*', element: <NotFoundPage /> },
+      { path: "*", element: <Login /> },
+      // { path: "forbidden", element: <LoginForbidden /> },
+      // { path: "forgot", element: <LoginForgot /> },
+      // { path: "reset/:hash", element: <LoginReset /> },
     ],
   },
-]);
+];
+
+routes.patient = [
+  {
+    path: "/:patient",
+    element: <ProtectedRoute />,
+    children: [
+      {
+        element: <AppLayout />,
+        children: [
+          { path: "appointments", element: <HomePage /> },
+          { path: "appointments/create", element: <Appointments /> },
+        ],
+      },
+    ],
+  },
+];
+
+export default routes;

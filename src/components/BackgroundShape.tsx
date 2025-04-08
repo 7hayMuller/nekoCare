@@ -5,13 +5,17 @@ type BackgroundShapeProps = {
   left?: string;
   right?: string;
   bottom?: string;
+  mode?: string;
+  zIndex?: number;
 };
 
 const BackgroundShape: React.FC<BackgroundShapeProps> = ({
+  zIndex,
   top,
   left,
   right,
   bottom,
+  mode,
 }) => {
   return (
     <Box
@@ -23,8 +27,10 @@ const BackgroundShape: React.FC<BackgroundShapeProps> = ({
         bottom: bottom,
         width: "1000px",
         height: "800px",
-        zIndex: -1,
-        backgroundImage: `url('/assets/nekoOrganicForm.svg')`,
+        zIndex: zIndex ?? -1,
+        backgroundImage: `url('/assets/neko${
+          mode === "white" ? "White" : "Blue"
+        }OrganicForm.svg')`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain",
         backgroundPosition: "top right",

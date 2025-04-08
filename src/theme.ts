@@ -7,12 +7,14 @@ declare module "@mui/material/styles" {
     indico: Palette["primary"];
     rose: Palette["primary"];
     lime: Palette["primary"];
+    googleRed: Palette["primary"];
   }
 
   interface PaletteOptions {
     indico?: PaletteOptions["primary"];
     rose?: PaletteOptions["primary"];
     lime?: PaletteOptions["primary"];
+    googleRed?: PaletteOptions["primary"];
   }
 }
 
@@ -28,6 +30,7 @@ export const theme = createTheme({
     indico: { main: "#7C77B9" },
     rose: { main: "#C33C54" },
     lime: { main: "#BCED09" },
+    googleRed: { main: "#DB4437" },
     background: {
       default: "#FCFCFC",
       paper: "#FFFFFF",

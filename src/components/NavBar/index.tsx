@@ -10,10 +10,12 @@ import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const { patient } = useParams();
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -22,6 +24,8 @@ const NavBar = () => {
   };
 
   const handleClose = () => {
+    window.localStorage.clear();
+    window.location.href = "/";
     setAnchorEl(null);
   };
 
@@ -50,7 +54,7 @@ const NavBar = () => {
           <Typography
             fontWeight={500}
             sx={{ cursor: "pointer" }}
-            onClick={() => navigate("/appointments")}
+            onClick={() => navigate(`/${patient}/appointments`)}
           >
             Consultas
           </Typography>
