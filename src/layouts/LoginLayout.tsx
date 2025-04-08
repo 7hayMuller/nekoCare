@@ -14,11 +14,11 @@ const LoginLayout = () => {
         position: "relative",
       }}
     >
-      <BackgroundShape top="-200px" right="-100px" mode="white" />
+      <BackgroundShape top="-200px" right="-100px" />
       <Container sx={{ mt: 4 }}>
         <Outlet />
       </Container>
-      <BackgroundShape bottom="-400px" left="-500px" mode="white" />
+      <BackgroundShape bottom="-400px" left="-500px" />
     </Box>
   );
 };
