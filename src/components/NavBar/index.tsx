@@ -10,11 +10,10 @@ import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { patient } = useParams();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -42,10 +41,10 @@ const NavBar = () => {
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <img src="/assets/nekoLogoTransparent.png" width={150} height={150} />
-          <Typography variant="h5" fontWeight={700} color="primary">
+          <Typography variant="h4" fontWeight={700} color="primary">
             Neko
           </Typography>
-          <Typography variant="h5" fontWeight={700} color="secondary">
+          <Typography variant="h4" fontWeight={700} color="secondary">
             Care
           </Typography>
         </Box>
@@ -54,11 +53,15 @@ const NavBar = () => {
           <Typography
             fontWeight={500}
             sx={{ cursor: "pointer" }}
-            onClick={() => navigate(`/${patient}/appointments`)}
+            onClick={() => navigate(`/appointments`)}
           >
             Consultas
           </Typography>
-          <Typography fontWeight={500} sx={{ cursor: "pointer" }}>
+          <Typography
+            fontWeight={500}
+            sx={{ cursor: "pointer" }}
+            onClick={() => navigate(`/exams`)}
+          >
             Exames
           </Typography>
           <Typography fontWeight={500} sx={{ cursor: "pointer" }}>

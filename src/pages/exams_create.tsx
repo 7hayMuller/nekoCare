@@ -12,7 +12,7 @@ import scheduleTime from "@/mocks/scheduleTime.json";
 import { useState } from "react";
 import { formatPhone } from "@/utils/normalize";
 
-const AppointmentsCreate = () => {
+const ExamsCreate = () => {
   const [successAlert, setSuccessAlert] = useState<boolean>(false);
   const [phone, setPhone] = useState("");
 
@@ -41,14 +41,14 @@ const AppointmentsCreate = () => {
           }}
           severity="error"
         >
-          Erro ao marcar consulta, por favor tente novamente mais tarde.
+          Erro ao marcar exame, por favor tente novamente mais tarde.
         </Alert>
       )}
       <Box mt={-5}>
         <Grid container spacing={2} justifyContent="start">
           <Grid size={12}>
             <Typography variant="h5" fontWeight={600} align="left">
-              Agendar consulta
+              Agendar exame
             </Typography>
           </Grid>
         </Grid>
@@ -172,4 +172,4 @@ const AppointmentsCreate = () => {
   );
 };
 
-export default AppointmentsCreate;
+export default ExamsCreate;

@@ -8,6 +8,7 @@ declare module "@mui/material/styles" {
     rose: Palette["primary"];
     lime: Palette["primary"];
     googleRed: Palette["primary"];
+    appleBlack: Palette["primary"];
   }
 
   interface PaletteOptions {
@@ -15,6 +16,7 @@ declare module "@mui/material/styles" {
     rose?: PaletteOptions["primary"];
     lime?: PaletteOptions["primary"];
     googleRed?: PaletteOptions["primary"];
+    appleBlack?: PaletteOptions["primary"];
   }
 }
 
@@ -31,6 +33,7 @@ export const theme = createTheme({
     rose: { main: "#C33C54" },
     lime: { main: "#BCED09" },
     googleRed: { main: "#DB4437" },
+    appleBlack: { main: "#1D1D1F" },
     background: {
       default: "#FCFCFC",
       paper: "#FFFFFF",

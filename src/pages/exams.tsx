@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CustomDialog from "@/components/Dialog";
 
-const HomePage = () => {
+const Exams = () => {
   const navigate = useNavigate();
 
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
@@ -47,21 +47,21 @@ const HomePage = () => {
           }}
           severity="success"
         >
-          Sua consulta foi desmarcada com sucesso!
+          Seu exame foi desmarcado com sucesso!
         </Alert>
       )}
       <Box>
         <Grid container spacing={2} alignItems="center" justifyContent="center">
           <Grid size={{ xs: 6, md: 8 }}>
             <Typography variant="h5" fontWeight={600}>
-              Minhas consultas
+              Meus exames
             </Typography>
           </Grid>
           <Grid size={{ xs: 6, md: 8 }}>
             <List
               avatar="/static/images/avatar/1.jpg"
-              description="Consulta marcada com a Drª Juliana"
-              title="Terça-feira 01/04 ás 13:30h"
+              description="Exame marcada com o Drº Vinicius"
+              title="Quinta-feira 10/04 ás 15:30h"
               secondaryAction={
                 <Grid container direction="row" spacing={1} px={5}>
                   <Grid>
@@ -70,7 +70,7 @@ const HomePage = () => {
                         edge="end"
                         aria-label="update"
                         sx={{ color: (theme) => theme.palette.indico.main }}
-                        onClick={() => navigate(`/appointments/create`)}
+                        onClick={() => navigate(`/exams/create`)}
                       >
                         <EditCalendarIcon />
                       </IconButton>
@@ -111,9 +111,9 @@ const HomePage = () => {
               size="large"
               variant="contained"
               sx={{ width: "300px", backgroundColor: "primary" }}
-              onClick={() => navigate(`/appointments/create`)}
+              onClick={() => navigate(`/exams/create`)}
             >
-              Marcar consulta
+              Marcar exame
             </Button>
           </Grid>
         </Grid>
@@ -139,4 +139,4 @@ const HomePage = () => {
     </>
   );
 };
-export default HomePage;
+export default Exams;
